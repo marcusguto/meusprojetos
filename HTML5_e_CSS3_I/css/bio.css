@@ -1,0 +1,26 @@
+.citacao-fiat {
+    background-color: #D9E5E3;
+    border: 10px solid #C2CCCA;
+    width: 250px;
+    box-sizing: border-box;
+    margin: 20px 40px;
+    float: right;
+}
+
+.citacao-petrobras {
+    background-color: #D9E5E3;
+    border: 10px solid #C2CCCA;
+    width: 250px;
+    box-sizing: border-box;
+    margin: 20px 40px;
+    float: left;
+}
+
+cite {
+    font-style: italic;
+    float: right;
+}
+
+.citacao-fiat, .citacao-petrobras, .navegacao-site, .rodape-pagina {
+    padding: 20px;
+}

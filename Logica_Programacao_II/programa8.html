@@ -1,0 +1,95 @@
+<canvas width="600" height="400"></canvas>
+<br>
+<big>Selecione a cor: </big><input type="color">
+
+<script>
+
+    var paleta = document.querySelector('input');
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var cores = ['blue', 'red', 'green'];
+    var opcaoCor = 0;
+    var raio = 10;
+    var desenha = false;
+    
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function habilitaDesenhar() {
+
+        desenha = true;
+
+    }
+
+    function desabilitaDesenhar() {
+
+        desenha = false;
+
+    }
+
+    function desenhaCirculo(evento) {
+
+        if(desenha) {
+
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+
+            if((evento.shiftkey) && (evento.altKey)) {
+
+                alert('Só aperte uma tecla por vez, por favor!');
+
+            } else if((evento.shiftKey) && (raio <= 40)) {
+
+                raio = raio + 1;
+
+              } else {
+
+                    if((evento.altKey) && (raio > 5)) {
+
+                        raio = raio - 1;
+                    }
+
+                }
+            
+            pincel.fillStyle = paleta.value;
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2 * Math.PI)
+            pincel.fill();
+
+        }
+                
+    }
+
+    function mudaCor() {
+       
+        /*if(opcaoCor == 0) {
+
+            alert('Nova cor selecionada: VERMELHO!');
+            
+        } else {
+
+            if(opcaoCor == 1) {
+
+                alert('Nova cor selecionada: VERDE!');
+                
+            } else {
+
+                alert('Nova cor selecionada: AZUL!')
+                opcaoCor = -1;
+
+            }
+
+        }
+
+        opcaoCor++;*/
+
+        return false;
+        
+    }
+
+    tela.onmousemove = desenhaCirculo;
+    tela.oncontextmenu = mudaCor;
+    tela.onmousedown = habilitaDesenhar;
+    tela.onmouseup = desabilitaDesenhar;
+
+</script>

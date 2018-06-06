@@ -1,0 +1,101 @@
+#Codificação UTF-8
+# -*- coding: UTF-8 -*-
+
+#Usamos %s para tratar o resultado final como uma String
+>>> print 'Convite do %s idade %s'  % (convite, idade)
+Convite do Rayson Shall idade 20
+
+#Adiciona o elemento ao final da lista
+convites.append(elemento)
+
+#Remove o elemento da lista
+convites.remove(elemento)
+
+#Variável do tipo lista
+tipos_convite = ['vip', 'normal', 'meia', 'cortesia']
+
+#Variavel do tipo Tuple - não aceita adicionar ou remover valores. Não tem a função append
+tipos_convite = ('vip', 'normal', 'meia', 'cortesia')
+
+#Variável tipo dicionario
+convite_com_valor = {'vip' : 60 , 'normal' : 40 , 'meia': 30 , 'cortesia':0}
+
+#imprime somente as chaves
+convites_com_valor.keys()
+
+#imprime somente os valores
+convites_com_valor.values()
+
+
+
+
+#concatenar tuples e listas
+status_civil = ('casado','solteiro') + ('divorciado',)
+estados = ('RJ', 'SP') + tuple(['MG', 'ES'])
+
+#Funções importantes
+
+max([10, 5, 7])
+min((10, 3, 9))
+len()
+
+
+#Capturando o input de usuário
+nome = raw_input()
+
+#Funções de data e hora
+from datetime import date
+date.today()
+date.today().day
+date.today().month
+date.today().year
+
+ #regex
+ import re
+ resultados = re.findall(r'([JP]\w+)','Java JavaScript Python')
+ r' ' #raw string
+ r'( )' # a regex vem entre os parenteses
+ [JP] #a string deve começar com J ou P
+ \w+ #'word' qualquer caracter quantas vezes [a-zA-Z0-9]
+ \d #qualquer número [0-9]
+ \s #whitespace, tabulador ou return
+ r'(\w+\d$)' #verifica se a expressão termina com um número
+ r'(\w+\d\b)' #verifica se existem palavras na string que terminam com número
+ r'(^\d\w+)' #verifica se a expressão começa com um número
+ r'(\b\d\w+)' #verifica se existem palavras na string que começam com número
+ regex_url = 
+
+ #Encapsulamento
+ self.__curtidas = 0
+
+ #herança
+ class Perfil_Vip(Perfil):
+ return super(Perfil_Vip, self).obter_curtidas() * 10.0
+ super(Perfil_Vip, self).__init__(nome, telefone, empresa)
+
+ #arquivos
+ # para leitura apenas, r – read
+>>> arquivo = open('perfis.csv','r')
+#para leitura e escrita (w+)
+>>> arquivo = open('perfis.csv','w+')
+linha = arquivo.readline()
+>>> for linha in arquivo:
+...     print linha
+arquivo.close()
+# apenas escrita 
+>>> arquivo_novo = open('arquivo_novo.csv','w') 
+>>> arquivo_novo.write('Pedro Gomes, 23-45631234, Gomes e amigos \n')
+>>> arquivo_novo.close()
+# apenas escrita - flag 'a' - acrescenta linhas ao final do arquivo
+#arquivos binarios
+logo = open('python-logo.png', 'rb')
+data = logo.read()
+logo.close()
+
+logo2 = open('python-logo2.png', 'wb')
+logo2.write(data)
+logo2.close()
+
+valores = linha.split(',')
+@staticmethod
+@classmethod

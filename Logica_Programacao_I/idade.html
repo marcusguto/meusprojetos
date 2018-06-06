@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br><br>");
+
+    }
+
+    function mostra(mensagem) {
+
+        document.write(mensagem);
+        pulaLinha();
+
+    }
+
+    var anoAtual = 2018;
+    var geracao = 28;
+    var quantidadeGeracoes = Math.round((anoAtual - 1500) / geracao);
+
+    mostra("Desde o descobrimento do Brasil já se passaram " + quantidadeGeracoes + " gerações de brasileiros.");
+    mostra("Gostou?");
+
+</script>
